@@ -10,7 +10,7 @@ def home():
 def save():
     msg = request.args.get('msg', '')
     f = open("messages.txt", "a")
-    f.write(msg + '\n')
+    f.write(msg + '<br>')
     f.close()
     f = open("messages.txt", "r")
     return f.read()
