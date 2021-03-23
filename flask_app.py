@@ -3,14 +3,6 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route('/')
-def home():
-    return render_template('index.html')
-
-@app.route('/save')
-def save():
-    msg = request.args.get('msg', '')
-    f = open("messages.txt", "a")
-    f.write(msg + '<br>')
-    f.close()
-    f = open("messages.txt", "r")
-    return f.read()
+def name_home():
+    name = request.args.get('n', '')
+    return 'Hello ' + name
